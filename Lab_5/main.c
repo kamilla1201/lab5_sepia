@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "decode.h"
+#include "bmp.h"
 
 int main(int argc, char* argv[]) {
 	int size;
@@ -33,15 +34,7 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	fopen_s( &f, "output.ppm", "wb");
-	if (!f) {
-		printf("Error opening the output file.");
-		getchar();
-		return 1;
-	}
-	fprintf(f, "P%d\n%d %d\n255\n",  6, width_Get(), height_Get());
-	fwrite(Image(), 1, size_Get(), f);
-	fclose(f);
+	BMP_Save("output.bmp", Width_Get(), Height_Get(), Image());
 	Destroy();
 	return 0;
 }

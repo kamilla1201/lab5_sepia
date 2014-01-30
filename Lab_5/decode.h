@@ -41,35 +41,29 @@ typedef struct context {
 
 static jpg_cont jpg_data;
 
-unsigned char Clip(const int x); // convert to unsigned char
+int Bits_Show(int bits); // show bits
 
-void Row_IDCT(int* block); // rows of the inverse discrete cosine transform
+void Bits_Skip(int bits); // skip bits
 
-void Col_IDCT(const int* block, unsigned char *out, int step); // columns of the inverse discrete cosine transform
-
-int bits_Show(int bits); // show bits
-
-void bits_Skip(int bits); // skip bits
-
-int bits_Get(int bits); // get bits
+int Bits_Get(int bits); // get bits
 
 void Skip(int count); // skip bytes
 
-void length_Get(); // get length of segment
+void Length_Get(); // get length of segment
 
-void Skip_marker(); // comments segment
+void Skip_Marker(); // comments segment
 
-void SOF_decode(); // frame segment 
+void SOF_Decode(); // frame segment 
 
-void DHT_decode(); // Huffman table segment 
+void DHT_Decode(); // Huffman table segment 
 
-void DQT_decode(); // quantization table segment DQT
+void DQT_Decode(); // quantization table segment DQT
+
+void SOS_Decode(); //  scan segment 
 
 int VLC_Get(vlc_code* vlc, unsigned char* code); // variable length decode
 
 void Block_Decode(jpg_comp* c, unsigned char* out); // decode block 8x8
-
-void SOS_decode(); //  scan segment 
 
 void Upsample(jpg_comp* c); // upsample image
 
@@ -83,13 +77,13 @@ void Destroy(); // free memory
 
 result_status Decode(const void* jpeg, const int size); // decode a jpg image
 
-int width_Get(); // return width
+int Width_Get(); // return width
 
-int height_Get(); // return height
+int Height_Get(); // return height
 
 unsigned char* Image(); // return decoded image data
 
-int size_Get(); // return size
+int Size_Get(); // return size
 
 
 

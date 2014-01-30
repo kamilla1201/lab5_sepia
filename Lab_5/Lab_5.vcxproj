@@ -78,10 +78,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="bmp.h" />
     <ClInclude Include="decode.h" />
+    <ClInclude Include="idct.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bmp.c" />
     <ClCompile Include="decode.c" />
+    <ClCompile Include="idct.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

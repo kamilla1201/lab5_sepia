@@ -18,12 +18,24 @@
     <ClInclude Include="decode.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="bmp.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="idct.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="decode.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bmp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="idct.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
